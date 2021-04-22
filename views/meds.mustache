@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <body>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1> LIST OF MEDICIENS </h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class= "table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">MID</th>
+                                    <th scope="col">MEICIENE</th>
+                                    <th scope="col">COUNT</th>
+                                    <th scope="col">BRAND</th>
+                                    <th scope="col">EDIT</th>
+                                    <th scope="col">DELETE</th> 
+                                </tr>   
+                            </thead>
+                            {{#rows}}
+                <tr>
+                    <td>{{mid}}</td>
+                    <td>{{name}}</td>
+                    <td>{{count}}</td>
+                    <td>{{brand}}</td>
+                    <td>
+                        <form action="/meds/delete/{{mid}}" method="post">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="/meds/edit/{{mid}}">Edit</a>
+                    </td>
+
+                </tr>
+
+
+
+
+
+            {{/rows}}
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+           
+        </body>
+    </head>
+</html>
